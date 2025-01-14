@@ -1,7 +1,15 @@
+import { NavLink } from 'react-router-dom';
+
+// using NavLink instead of Link to style the active link and handle dynamic pages at outlet
 const Nav = () => {
-  // TODO: Add necessary code to display the navigation bar and link between the pages
   return (
-    <div>Nav</div>
+      <>
+          <div className='nav-column'>
+              <span>Navigation</span>
+              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/SavedCandidates'>Potential Candidates</NavLink>
+          </div>
+      </>
   )
 };
 
