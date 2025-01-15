@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-import type { Candidate } from './interfaces/Candidate.interface.tsx';
 
 import App from './App.tsx';
 import CandidateSearch from './pages/CandidateSearch.tsx';
