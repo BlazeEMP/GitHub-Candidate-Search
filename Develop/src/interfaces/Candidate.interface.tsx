@@ -9,6 +9,7 @@ interface Candidate {
     readonly html_url: string;
     readonly company: string | null;
     readonly location: string | null;
+    readonly bio: string | null;
 }
 
 export type { Candidate };
