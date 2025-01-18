@@ -79,15 +79,17 @@ const CandidateSearch = () => {
                             <p>Location: {currentCandidate.location || 'Unknown'}</p>
                             <p>Email: {currentCandidate.email || 'No email provided'}</p>
                             <p>Company: {currentCandidate.company || 'Not Available'}</p>
-                            <a href={currentCandidate.html_url} target="_blank" rel="noreferrer">
-                                Visit GitHub Profile
-                            </a>
+                            <a href={currentCandidate.html_url} target="_blank" rel="noreferrer">Visit GitHub</a>
                         </>
                     ) : (
                         <p>No candidate data found at users URL, user by the name of {users[userIndex]} may not exist anymore</p>
                     )}
                     <div className='two-buttons'>
-                        <button onClick={saveOnClick}>+</button>
+                        {/* we use this ternary again to make sure we don't render the add button for userprofiles returning a 404 on search
+                         more complex filtering to not show candidates without profile or email to contact later */}
+                        {currentCandidate && currentCandidate.login ? (
+                            <button onClick={saveOnClick}>+</button>
+                        ) : null}
                         <button onClick={denyOnClick}>-</button>
                     </div>
                 </div>
@@ -98,6 +100,6 @@ const CandidateSearch = () => {
             <p>No more candidates to display. Refresh the page to search.</p>
         )
     }
-    };
+};
 
 export default CandidateSearch;
