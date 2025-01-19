@@ -12,6 +12,13 @@ const SavedCandidates = () => {
         }
     }, []);
 
+    const removeOnClick = (username: string) => {
+        // this will check if a username matches the username of the candidate we want to remove, ONLY if it matches will it not be included in the new mapped array
+        const updatedCandidates = savedCandidates.filter((candidate) => candidate.login !== username);
+        setSavedCandidates(updatedCandidates);
+        localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
+    };
+
     return (
         <div>
             <h1>Saved Candidates</h1>
