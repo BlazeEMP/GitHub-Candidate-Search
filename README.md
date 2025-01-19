@@ -20,7 +20,11 @@
 
   ## Usage
 
-  On the home page select or deny candidates from the preselected list. On the saced users page, click the remove button if you are no longer interested.
+  On the home page select or deny candidates from the preselected list. On the saced users page, click the remove button if you are no longer interested.  
+  [VISIT HERE!](https://github-candidate-search-vwbr.onrender.com/)
+
+  ![Homepage](./assets/Homepage.png)
+  ![Saved users page](./assets/SavedPage.png)
 
   ## License
 
