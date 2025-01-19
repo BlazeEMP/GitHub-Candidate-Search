@@ -1,3 +1,11 @@
+import express from 'express';
+const app = express();
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 const searchGithub = async () => {
     try {
         const start = Math.floor(Math.random() * 100000000) + 1;
