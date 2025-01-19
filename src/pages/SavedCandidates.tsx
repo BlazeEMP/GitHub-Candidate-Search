@@ -22,37 +22,39 @@ const SavedCandidates = () => {
     return (
         <div>
             <h1>Saved Candidates</h1>
-            <span>(Click the username to visit their GitHub profile)</span>
             {savedCandidates.length > 0 ? (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Location</th>
-                            <th>Email</th>
-                            <th>Company</th>
-                            <th>Bio</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {savedCandidates.map((candidate) => (
-                            <tr key={candidate.login}>
-                                <td><img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} width="50" /></td>
-                                <td>{candidate.name || 'No Name Provided'}<br />
-                                <a href={candidate.html_url} target="_blank" rel="noreferrer">({candidate.login})</a></td>
-                                <td>{candidate.location || 'No location provided'}</td>
-                                <td>{candidate.email || 'No Email Provided'}</td>
-                                <td>{candidate.company || 'Not Available'}</td>
-                                <td>{candidate.bio}</td>
-                                <td><button onClick={() => removeOnClick(candidate.login)}>Remove</button></td>
+                <>
+                    <span>(Click the username to visit their GitHub profile)</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Email</th>
+                                <th>Company</th>
+                                <th>Bio</th>
+                                <th>Remove</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {savedCandidates.map((candidate) => (
+                                <tr key={candidate.login}>
+                                    <td><img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} width="50" /></td>
+                                    <td>{candidate.name || 'No Name Provided'}<br />
+                                        <a href={candidate.html_url} target="_blank" rel="noreferrer">({candidate.login})</a></td>
+                                    <td>{candidate.location || 'No location provided'}</td>
+                                    <td>{candidate.email || 'No Email Provided'}</td>
+                                    <td>{candidate.company || 'Not Available'}</td>
+                                    <td>{candidate.bio}</td>
+                                    <td><button onClick={() => removeOnClick(candidate.login)}>Remove</button></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </>
             ) : (
-                <p>No saved candidates, get ing!</p>
+                <p>No saved candidates, get browsing!</p>
             )}
         </div>
     );
